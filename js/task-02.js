@@ -27,3 +27,13 @@ const images = [
     alt: 'Zebras on Zebra',
   },
 ];
+
+const markup = images.map((image) =>
+  `<li><img src="${image.url}" alt="${image.alt}" style="width: 360px; height: 300px" /></li>`).join('');
+
+const gallery = document.querySelector('.gallery');
+gallery.innerHTML = markup;
+gallery.style.listStyleType = "none";
+gallery.style.display = "flex";
+gallery.style.gap = "24px";
+
